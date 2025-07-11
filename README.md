@@ -22,38 +22,6 @@ A robust REST API built with NestJS and MongoDB that demonstrates user managemen
 - **Testing**: [Jest](https://jestjs.io/) - Testing framework
 - **Code Quality**: [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/) - Code linting and formatting
 
-## 📋 Prerequisites
-
-Before running this project, make sure you have the following installed:
-
-- [Node.js](https://nodejs.org/) (v16 or higher)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
-- [MongoDB](https://www.mongodb.com/try/download/community) (running locally or MongoDB Atlas)
-
-## 🚀 Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone <your-repository-url>
-   cd nestjs-mongodb
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Set up MongoDB**
-   - Make sure MongoDB is running on your local machine at `mongodb://127.0.0.1:27017`
-   - The application will automatically create a database named `nest_tutorial`
-
-4. **Start the development server**
-   ```bash
-   npm run start:dev
-   ```
-
-The application will be available at `http://localhost:3000`
-
 ## 📚 API Endpoints
 
 ### Users Module
@@ -74,33 +42,6 @@ The application will be available at `http://localhost:3000`
 | `GET` | `/posts` | Get all posts |
 | `GET` | `/posts/id?id=<post_id>` | Get post by ID |
 
-## 📝 Usage Examples
-
-### Creating a User
-```bash
-curl -X POST http://localhost:3000/users \
-  -H "Content-Type: application/json" \
-  -d '{
-    "userName": "john_doe",
-    "displayName": "John Doe",
-    "avatarUrl": "https://example.com/avatar.jpg"
-  }'
-```
-
-### Creating a Post
-```bash
-curl -X POST http://localhost:3000/posts \
-  -H "Content-Type: application/json" \
-  -d '{
-    "title": "My First Post",
-    "content": "This is the content of my first post!"
-  }'
-```
-
-### Getting All Users
-```bash
-curl -X GET http://localhost:3000/users
-```
 
 ## 🏗️ Project Structure
 
@@ -141,37 +82,6 @@ src/
 - `npm run lint` - Run ESLint
 - `npm run format` - Format code with Prettier
 
-## 🗄️ Database Schema
-
-### User Schema
-- `userName` (string, unique, required) - Unique username
-- `displayName` (string, optional) - Display name
-- `avatarUrl` (string, optional) - Avatar image URL
-- `userSettings` (ObjectId, ref: userSettings) - User settings reference
-- `posts` (Array of ObjectIds, ref: posts) - User's posts
-
-### Post Schema
-- `title` (string, unique, required) - Post title
-- `content` (string, required) - Post content
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [NestJS Documentation](https://docs.nestjs.com/)
-- [Mongoose Documentation](https://mongoosejs.com/docs/)
-- [MongoDB Documentation](https://docs.mongodb.com/)
-
-## 📞 Support
-
-If you have any questions or need help, please open an issue in the repository.
